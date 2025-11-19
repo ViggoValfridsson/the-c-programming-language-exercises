@@ -1,0 +1,15 @@
+Inputs that would most likely uncover bugs in word counting program:
+
+Whitespace only (tabs, newlines, spaces in any combination)
+Empty input (zero characters)
+Just EOF with no other input
+Single word with no whitespace
+Leading whitespace before words
+Trailing whitespace after words
+Leading and trailing whitespace
+Multiple consecutive whitespace characters between words
+Extremely long single word
+Multiple extremely long words
+Binary data (non-text input)
+Input at integer max length
+Input exceeding integer max length
