@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+// Verify that the expression getchar() != EOF is 0 or 1
+// My interpretation of this is simply to literally check if the expression evaluates to the integer 0 or 1
+// This program will always output "Result of comparison is either 0 or 1\n"
 int main() {
     int comparison_result = getchar() != EOF;
 

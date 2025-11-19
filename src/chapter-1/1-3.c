@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Modify the temperature conversion program to print a heading above the table
 int main() {
     float fahr = 0;
     int upper = 300;

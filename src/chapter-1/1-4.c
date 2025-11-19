@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Write a program to print the corresponding Celcius to Fahrenheit table
 int main() {
     float celsius = 0;
     int upper = 300;
