@@ -4,7 +4,8 @@ This repository contains my solutions to the exercises from "The C Programming L
 
 ## Purpose
 
-* Practice the fundamentals of C programming. 
+* Expand my understanding of Unix-like systems and low-level programming as a .NET developer
+* Practice the fundamentals of C programming
 * Save all my personal solutions to the exercises
 
 ## Note
