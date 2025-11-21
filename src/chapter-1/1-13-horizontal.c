@@ -1,6 +1,7 @@
 // Write a program to print a histogram of the lengths of words in its input. It is easy to draw the histogram with the
 // bars horizontal; a verical orientation is more challenging
-// This file contains the horizontal solution, the vertical one can be found in 1-13-vertical.c
+
+// This file contains the horizontal solution, the vertical solution can be found in 1-13-vertical.c
 
 #include <stdbool.h>
 #include <stdio.h>
