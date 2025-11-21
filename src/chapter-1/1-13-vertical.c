@@ -19,14 +19,12 @@ int read_word_lengths(int *word_lengths, int max_words) {
         bool is_current_space = character == ' ' || character == '\t' || character == '\n';
 
         if (is_current_space && !is_last_space) {
-            is_last_space = true;
             word_index++;
         } else if (!is_current_space) {
-            is_last_space = false;
             word_lengths[word_index]++;
-        } else {
-            is_last_space = is_current_space;
         }
+
+        is_last_space = is_current_space;
     }
 
     // After loop, account for last word if it didn't end with space
@@ -79,4 +77,3 @@ int main() {
 
     return 0;
 }
-

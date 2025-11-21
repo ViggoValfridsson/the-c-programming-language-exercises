@@ -16,15 +16,14 @@ int main() {
 
     while ((character = getchar()) != EOF && word_index < MAX_WORD_COUNT) {
         bool is_current_space = character == ' ' || character == '\t' || character == '\n';
+
         if (is_current_space && !is_last_space) {
-            is_last_space = true;
             word_index++;
         } else if (!is_current_space) {
-            is_last_space = false;
             word_lengths[word_index]++;
-        } else {
-            is_last_space = is_current_space;
         }
+
+        is_last_space = is_current_space;
     }
 
     // After loop, account for last word if it didn't end with space
