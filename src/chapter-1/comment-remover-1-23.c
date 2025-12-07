@@ -1,13 +1,18 @@
 // Write a program to remove all comments from a C program. Don't forget to handle quoted string and character constants
 // properly. C comments do not nest
 
-// Todo need to \" escape sequence in strings, dangling slash not being printed
+// Todo fix dangling slash not being printed
 
 #include <stdbool.h>
 #include <stdio.h>
 
-int is_between_chars(char current, char target, bool is_already_inside) {
-    return is_already_inside ? current != target : current == target;
+int is_between_chars(char current, char last, char target, bool is_already_inside) {
+    if (is_already_inside) {
+        // Don't leave in case of escape sequence \" or \'
+        return current != target || last == '\\';
+    } else {
+        return current == target;
+    }
 }
 
 void skip_to_newline() {
@@ -47,12 +52,12 @@ int main() {
     char current;
 
     while ((current = getchar()) != EOF) {
-        is_string = is_between_chars(current, '"', is_string);
-        is_char_constant = is_between_chars(current, '\'', is_char_constant);
+        is_string = is_between_chars(current, last, '"', is_string);
+        is_char_constant = is_between_chars(current, last, '\'', is_char_constant);
 
         if (is_string || is_char_constant) {
-            last = 0;
             putchar(current);
+            last = current;
             continue;
         } else if (last == '/' && current == '/') {
             skip_to_newline();
