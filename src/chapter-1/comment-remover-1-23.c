@@ -1,8 +1,6 @@
 // Write a program to remove all comments from a C program. Don't forget to handle quoted string and character constants
 // properly. C comments do not nest
 
-// Todo fix dangling slash not being printed
-
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -79,4 +77,10 @@ int main() {
 
         last = current;
     }
+
+    if (last == '/') {
+        putchar(last);
+    }
+
+    return 0;
 }
